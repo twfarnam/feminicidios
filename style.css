@@ -1,0 +1,27 @@
+
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 11px;
+  text-align: center;
+}
+
+.state {
+
+}
+
+.bubble {
+  fill-opacity: 0.5;
+  stroke: #fff;
+  stroke-width: .2;
+}
+
+.bubble:hover {
+  stroke: #333;
+  stroke-width: .5;
+}
+
+
+

@@ -1,0 +1,51 @@
+{
+  "name": "feminicidios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": {
+            "version": 3
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twfarnam/feminicidios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twfarnam/feminicidios/issues"
+  },
+  "homepage": "https://github.com/twfarnam/feminicidios#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.6.4",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "d3": "^5.15.0",
+    "d3-svg-legend": "^2.25.6",
+    "lodash": "^4.17.15"
+  }
+}
