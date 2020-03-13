@@ -9,6 +9,8 @@ a {
 
 .base {
   position: relative;
+  max-width: 900px;
+  margin: auto;
 }
 
 .state-detail {
