@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './script.js',
+  entry: './src/index.jsx',
   module: {
     rules: [
       {
@@ -10,7 +10,15 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
     ],
   },
 }

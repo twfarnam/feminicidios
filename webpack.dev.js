@@ -6,9 +6,10 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     publicPath: 'http://localhost:8080/',
-    filename: 'bundle.js',
+    filename: 'dist/bundle.js',
   },
   devtool: 'inline-source-map',
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     hot: true,
     sockPort: 8080,
