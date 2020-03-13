@@ -8,7 +8,7 @@ import { sortBy } from 'lodash'
 import states from '../data/states.json'
 import data from '../data/states_feminicide_sm.json'
 
-const width = 500
+const width = 420
 const height = 300
 
 const projection = d3.geoConicEqualArea()
@@ -170,15 +170,37 @@ function App() {
   }
 
   return (
-    <div>
-      { state &&
-        <div className="state-detail">
-          <div className="state-name">{state.properties.name}</div>
-          <div className="cases">
-            {state.properties.data[date].sum} víctimas 
-          </div>
+    <div className="base">
+      <div className="state-detail">
+        <div className="state-name">
+          {state ? state.properties.name : '\u00A0'}
         </div>
-      }
+        <div className="cases">
+          {state
+              ? state.properties.data[date].sum + ' víctimas'
+              : '\u00A0'
+          }
+        </div>
+      </div>
+      <svg className="map" viewBox={`0 0 ${width} ${height}`}>
+        { sorted.map((s,i) =>
+          <path
+            className="state"
+            key={i}
+            d={path(s)}
+            onMouseEnter={() => onMouseEnterState(s)}
+          />
+        )}
+        { sorted.map((s,i) => 
+          <circle
+            key={i}
+            className="bubble"
+            transform={`translate(${path.centroid(s)})`}
+            r={radius(s.properties.data[date].sum)}
+            onMouseEnter={() => onMouseEnterState(s)}
+          />
+        )}
+      </svg>
       <div className="controls">
         Número de víctimas de feminicidio
         <div className="button">
@@ -209,26 +231,6 @@ function App() {
           renderThumb={(props, state) => <div {...props} />}
         />
       </div>
-      <svg className="map" viewBox={`0 0 ${width} ${height}`}>
-        { sorted.map((s,i) =>
-          <path
-            className="state"
-            key={i}
-            d={path(s)}
-            onMouseEnter={() => onMouseEnterState(s)}
-          />
-        )}
-        { sorted.map((s,i) => 
-          <circle
-            key={i}
-            className="bubble"
-            transform={`translate(${path.centroid(s)})`}
-            r={radius(s.properties.data[date].sum)}
-            onMouseEnter={() => onMouseEnterState(s)}
-          />
-        )}
-      </svg>
-
       <div className="source">
         FUENTE: Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública por
         {' '}

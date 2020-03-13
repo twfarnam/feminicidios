@@ -1,5 +1,4 @@
 
-
 body,html {
   font-family: 'Roboto', sans-serif;
 }
@@ -8,6 +7,9 @@ a {
   color: #777;
 }
 
+.base {
+  position: relative;
+}
 
 .state-detail {
   position: absolute;
@@ -51,6 +53,9 @@ a {
   display: flex;
   font-size: 4rem;
   margin-left: -1rem;
+}
+.button svg {
+  cursor: pointer;
 }
 .slider {
   margin-top: 0.5rem;
@@ -102,3 +107,23 @@ a {
 
 
 
+
+@media (max-width: 700px) {
+
+  html {
+    font-size: 12px;
+  }
+
+  .state-detail {
+    padding: 1rem;
+  }
+
+  .controls {
+    position: relative;
+    margin-top: -1rem;
+    padding: 0;
+    padding-left: .5rem;
+    padding-bottom: 2rem;
+  }
+
+}
