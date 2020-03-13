@@ -1,4 +1,4 @@
-import './style.css'
+import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactSlider from 'react-slider'
@@ -175,7 +175,7 @@ function App() {
         <div className="state-detail">
           <div className="state-name">{state.properties.name}</div>
           <div className="cases">
-            {state.properties.data[date].sum} feminicidios
+            {state.properties.data[date].sum} víctimas 
           </div>
         </div>
       }
