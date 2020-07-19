@@ -55,7 +55,7 @@
     "@babel/preset-react": "^7.8.3",
     "autoprefixer": "^9.7.4",
     "d3": "^5.15.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.9.0",
